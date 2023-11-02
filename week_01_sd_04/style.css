@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+}
+
+body {
+  margin: 20px;
+}
+
+/* ######### */
+/* START NAV */
+/* ######### */
+
+form > nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+form > nav > img {
+  max-width: 140px;
+  max-height: 140px;
+  height: auto;
+  padding: 1%;
+  border: 1px solid black;
+}
+
+form > nav > div {
+  border: 1px solid black;
+}
+
+form > nav > div:nth-child(2) {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+font > nav > div > h1 {
+  font-size:xx-large;
+}
+
+form > nav > div > h1,
+form > nav > div > p {
+  margin: auto;
+}
+
+form > nav > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+}
+
+form > nav > div:nth-child(3) > div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+form > nav > div:nth-child(3) > div:nth-child(1) input {
+  width: 100%;
+}
+
+form > nav > div:nth-child(3) > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+form > nav > div:nth-child(3) > div:nth-child(2) > div {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+form > nav > div:nth-child(3) > div:nth-child(2) input {
+  height: 70%;
+}
+
+form > nav > div:nth-child(3) > p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* ####### */
+/* END NAV */
+/* ####### */
+
+
+
+/* ########## */
+/* START Desc */
+/* ########## */
+
+form > div {
+  margin: 10px;
+}
+
+/* ######## */
+/* END Desc */
+/* ######## */
+
+
+
+/* ########## */
+/* START Main */
+/* ########## */
+
+main {
+  margin: 10px;
+}
+
+/* ######## */
+/* END Main */
+/* ######## */
