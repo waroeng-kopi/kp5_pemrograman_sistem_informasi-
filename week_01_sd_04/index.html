@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tema 3</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
 </head>
 <body>
   <form>
@@ -17,7 +18,7 @@
       <div>
         <div>
           <label for="noseri">No&nbsp;Seri:&nbsp;</label>
-          <input type="text" id="noseri">
+          <p>FP-<p id="date"></p></p>
         </div>
         <div>
           <div>
@@ -40,19 +41,28 @@
     </div>
     <main>
       <p>Jalur Masuk* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : 
-        &emsp;<input type="radio" name="jalurmasuk" id="mandiri"><label for="mandiri">Mandiri PTN</label>
-        &emsp;<input type="radio" name="jalurmasuk" id="pmkd"><label for="pmkd">PMKD-PN</label>
+        <span>
+          &emsp;<input type="radio" name="jalurmasuk" id="mandiri" checked><label for="mandiri">Mandiri PTN</label>
+        </span>
+        <span>
+          &emsp;<input type="radio" name="jalurmasuk" id="pmkd"><label for="pmkd">PMKD-PN</label>
+        </span>
       </p>
 
-      <div>
-        <p>Jenis Masuk* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : 
-          &emsp;<input type="radio" name="jenismasuk" id="baru"><label for="baru">Peserta Didik Baru</label>
+      <p>Jenis Masuk* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : 
+        <span>
+          &emsp;<input type="radio" name="jenismasuk" id="baru" checked><label for="baru">Peserta Didik Baru</label>
+        </span>
+        <span>
           &ensp;<input type="radio" name="jenismasuk" id="pindahan"><label for="pindahan">PMKD-PN</label>
+        </span>
+        <span>
           &ensp;<input type="radio" name="jenismasuk" id="alihjenjang"><label for="alihjenjang">Alih Jenjang</label>
+        </span>
+        <span>
           &ensp;<input type="radio" name="jenismasuk" id="lintasjalur"><label for="lintasjalur">Lintas jalur</label>
-        </p>
-          
-      </div>
+        </span>
+      </p>
 
       <div>
         <p>Jurusan /Program Studi Pilihan* : 
@@ -62,9 +72,9 @@
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <label for="teknikC">C. Pengolahan Hasil Perkebunan: 
             <label for="teknikC1">1. D3 Teknologi Pengolahan Hasil Perkebunan</label><br>
-            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
             <label for="teknikC2">2. D3 Agroindustri</label><br>
-            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
             <label for="teknikC3">3. D4 Budidaya Tanaman Perkebunan</label><br>
           </label>
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -89,7 +99,7 @@
               <option value="teknikF">Teknik Informatika</option>
               <option value="teknikG">Teknik Sipil</option>
             </Select>
-            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
             2
             <Select id="studipilihan2" name="studipilihan2">
               <option value="teknikA">Teknik Mesin</option>
@@ -108,35 +118,59 @@
 
       <div>
         <b>BIODATA MAHASISWA</b><br>
-        <label for="namalengkap">Nama Lengkap (sesuai ijazah) : </label>
-        <input type="text" name="namalengkap" id="namalengkap"><br>
-        <label for="jeniskelamin">Jenis Kelamin* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; : </label>
-        <input type="radio" name="jeniskelamin" id="jeniskelaminlaki"><label for="jeniskelaminlaki">Laki-laki</label>
-        &emsp;&emsp;&emsp;
-        <input type="radio" name="jeniskelamin" id="jeniskelamincewe"><label for="jeniskelamincewe">Perempuan</label><br>
-        <label for="tempatlahir">Tempat Lahir &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : 
+        <label for="namalengkap">Nama Lengkap (sesuai ijazah) : 
+          <input type="text" name="namalengkap" id="namalengkap"><br>
+        </label>
+        
+        <label for="jeniskelamin">Jenis Kelamin* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+          <span>
+            <input type="radio" name="jeniskelamin" id="jeniskelaminlaki" checked><label for="jeniskelaminlaki">Laki-laki</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          </span>
+          <span>
+            <input type="radio" name="jeniskelamin" id="jeniskelamincewe"><label for="jeniskelamincewe">Perempuan</label><br>
+          </span>
+        </label>
+        
+        <label for="tempatlahir">Tempat Lahir &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; : 
           <input type="text" name="tempatlahir" id="tempatlahir">&emsp;&emsp;&emsp;&emsp;&emsp;
           <label for="">Tgl/bln/thn Lahir : <input type="date" id="birthday" name="birthday"></label>
         </label><br>
-        <label for="kewarganegaraan">Kewarganegaraan* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : 
-          <input type="radio" name="kewarganegaraan" id="kewarganegaraanwni"><label for="kewarganegaraanwni">Warga Negara Indonesia</label>
+
+        <label for="kewarganegaraan">Kewarganegaraan* &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp; : 
+          <span>
+            <input type="radio" name="kewarganegaraan" id="kewarganegaraanwni" checked><label for="kewarganegaraanwni">Warga Negara Indonesia</label>
+          </span>
           &emsp;&emsp;&emsp;
-          <input type="radio" name="kewarganegaraan" id="kewarganegaraanwna"><label for="kewarganegaraanwna">Warga Negara Asing</label>
+          <span>
+            <input type="radio" name="kewarganegaraan" id="kewarganegaraanwna"><label for="kewarganegaraanwna">Warga Negara Asing</label>
+          </span>
         </label><br>
         <label for="agama">
-          Agama* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : 
-          <input type="radio" name="agama" id="agamaislam"><label for="agamaislam">Islam</label>
+          Agama* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; : 
+          <span>
+            <input type="radio" name="agama" id="agamaislam" checked><label for="agamaislam">Islam</label>
+          </span>
           &emsp;&emsp;&emsp;
-          <input type="radio" name="agama" id="agamakristen"><label for="agamakristen">Kristen</label>
+          <span>
+            <input type="radio" name="agama" id="agamakristen"><label for="agamakristen">Kristen</label>
+          </span>
+          &emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
+          <span>
+            <input type="radio" name="agama" id="agamakhatolik"><label for="agamakhatolik">Khatolik</label>
+          </span><br><br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
+          <span>
+            <input type="radio" name="agama" id="agamahindu"><label for="agamahindu">Hindu</label>
+          </span>
           &emsp;&emsp;&emsp;
-          <input type="radio" name="agama" id="agamakhatolik"><label for="agamakhatolik">Khatolik</label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="agama" id="agamahindu"><label for="agamahindu">Hindu</label>
-          &emsp;&emsp;&emsp;
-          <input type="radio" name="agama" id="agamabudha"><label for="agamabudha">Budha</label>
+          <span>
+            <input type="radio" name="agama" id="agamabudha"><label for="agamabudha">Budha</label>
+          </span>
           &emsp;&emsp;&emsp;&emsp;&ensp;
-          <input type="radio" name="agama" id="agamakonghucu"><label for="agamakonghucu">Konghucu</label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+          <span>
+            <input type="radio" name="agama" id="agamakonghucu"><label for="agamakonghucu">Konghucu</label>
+          </span><br><br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
           <label for="agamalainnya">Lainnya, Sebutkan <input type="text" name="agamalainnya" id="agamalainnya"></label>
         </label>
       </div>
@@ -144,34 +178,39 @@
         <b>Alamat</b><br>
         <label for="jalan">Jalan &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : 
           <input type="text"><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <label for="">No : <input type="text"></label>
           &emsp;
           <label for="">RT : <input type="text"></label>
           &emsp;
           <label for="">RW : <input type="text"></label>
         </label><br>
-        <label for="">Dusun &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <input type="text"></label><br>
-        <label for="">Kelurahan &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : <input type="text"></label><br>
-        <label for="">Kecamatan &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : <input type="text"></label><br>
-        <label for="">Kabupaten / Kota &emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : <input type="text"></label><br>
-        <label for="">Propinsi &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <input type="text"></label><br>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        <label for="">Kode Pos : <input type="number"></label>&emsp;
-        <label for="">Telpon : <input type="number"></label>&emsp;
-        <label for="">HP : <input type="number"></label>
+        <label for="">Dusun &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <input type="text"></label><br>
+        <label for="">Kelurahan &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <input type="text"></label><br>
+        <label for="">Kecamatan &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : <input type="text"></label><br>
+        <label for="">Kabupaten / Kota &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp; : <input type="text"></label><br>
+        <label for="">Propinsi &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <input type="text"><br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <label for="">Kode Pos : <input type="number"></label>&emsp;
+          <label for="">Telpon : <input type="number"></label>&emsp;
+          <label for="">HP : <input type="number"></label>
+        </label>
       </div>
       <div>
         <b>DATA SEKOLAH</b><br>
         <label for="sekolah">Sekolah &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : 
-          <label for="sekolahnegri"><input type="radio" name="sekolah" id="sekolahnegri">Negeri</label>
-          &emsp;
-          <label for="sekolahswasta"><input type="radio" name="sekolah" id="sekolahswasta">Swasta</label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <span>
+            <input type="radio" name="sekolah" id="sekolahnegri" checked><label for="sekolahnegri">Negeri</label>
+          </span>
+          &emsp;&emsp;&emsp;
+          <span>
+            <input type="radio" name="sekolah" id="sekolahswasta"><label for="sekolahswasta">Swasta</label>
+          </span><br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <label for="">Sebutkan Nama SLTA /Sederajat : <input type="text"></label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <label for="">Kecamatan &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; : <input type="text"></label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <label for="">Lulusan Tahun : <input type="number"></label>&emsp;&emsp;
           <label for="">Jurusan : <input type="text"></label>
         </label>
@@ -180,40 +219,60 @@
         <b>BIODATA ORANG TUA / WALI</b><br>
         <b>AYAH</b><br>
         <label for="">Nama (Lengkap dengan gelar) &nbsp; : <input type="text" name="" id=""></label><br>
-        <label for="">Tempat Lahir &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : <input type="text"></label>&emsp;
-        <label for="">Tgl/bln/thn Lahir : <input type="date"></label>&emsp;
-        <label for="">Umur : <input type="number"></label><br>
+        <label for="">Tempat Lahir &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <input type="text">
+          &emsp;<label for="">Tgl/bln/thn Lahir : <input type="date"></label>
+          &emsp;<label for="">Umur : <input type="number"></label><br>
+        </label>
+        
+        
         <label for="pendidikanterakhirortu">Pendidikan Terakhir* &emsp;&emsp;&emsp;&emsp; : 
-          <label for="pendidikanterakhirortutidaksekolah"><input type="radio">Tidak Sekolah</label>&emsp;
-          <label for="pendidikanterakhirortusd"><input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortusd">SD/Sederajat</label>&emsp;
-          <label for="pendidikanterakhirortusmp"><input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortusmp">SMP/Sederajat</label>&emsp;
-          <label for="pendidikanterakhirortusma"><input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortusma">SMA/Sederajat</label>&emsp;
-          <label for="pendidikanterakhirortud3"><input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortud3">Diploma</label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-          <label for="pendidikanterakhirortus1"><input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortus1">Sarjana</label>&emsp;
-          <label for="pendidikanterakhirortus2"><input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortus2">Profesi</label>&emsp;
+          <span>
+            <input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortutidaksekolah" checked><label for="pendidikanterakhirortutidaksekolah">Tidak Sekolah</label>&emsp;
+          </span>
+          <span>
+            <input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortusd"><label for="pendidikanterakhirortusd">SD/Sederajat</label>&emsp;
+          </span>
+          <span>
+            <input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortusmp"><label for="pendidikanterakhirortusmp">SMP/Sederajat</label>&emsp;
+          </span>
+          <span>
+            <input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortusma"><label for="pendidikanterakhirortusma">SMA/Sederajat</label>&emsp;
+          </span>
+          <span>
+            <input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortud3"><label for="pendidikanterakhirortud3">Diploma</label>
+          </span><br><br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <span>
+            <input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortus1"><label for="pendidikanterakhirortus1">Sarjana</label>&emsp;
+          </span>
+          <span>
+            <input type="radio" name="pendidikanterakhirortu" id="pendidikanterakhirortus2"><label for="pendidikanterakhirortus2">Profesi</label>&emsp;
+          </span>
           <label for="pendidikanterakhirortulainnya">Lainnya, Sebutkan<input type="text" name="pendidikanterakhirortu" id="pendidikanterakhirortulainnya"></label>&emsp;
-        </label><br>
-        <label for="pekerjaanortu">Pekerjaan* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; : 
-          <label for="pekerjaanortutidakbekerja"><input type="radio" name="pekerjaanortu" id="pekerjaanortutidakbekerja">Tidak Bekerja</label>&emsp;
-          <label for="pekerjaanortunelayan"><input type="radio" name="pekerjaanortu" id="pekerjaanortunelayan">Nelayan</label>&emsp;
-          <label for="pekerjaanortupetani"><input type="radio" name="pekerjaanortu" id="pekerjaanortupetani">Petani</label>&emsp;
-          <label for="pekerjaanortupeternak"><input type="radio" name="pekerjaanortu" id="pekerjaanortupeternak"Peternak</label>&emsp;
-          <label for="pekerjaanortupns"><input type="radio" name="pekerjaanortu" id="pekerjaanortupns">PNS/TNI/Polri</label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-          <label for="pekerjaanortukaryawan"><input type="radio" name="pekerjaanortu" id="pekerjaanortukaryawan">Karyawan Swasta</label>&emsp;
-          <label for="pekerjaanortupedagangkecil"><input type="radio" name="pekerjaanortu" id="pekerjaanortupedagangkecil">Pedagang Kecil</label>&emsp;
-          <label for="pekerjaanortupedagangbesar"><input type="radio" name="pekerjaanortu" id="pekerjaanortupedagangbesar">Pedagang Besar</label>&emsp;
-          <label for="pekerjaanortuwirausaha"><input type="radio" name="pekerjaanortu" id="pekerjaanortuwirausaha">Wirausaha/Wiraswasta</label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-          <label for="pekerjaanortuburuh"><input type="radio" name="pekerjaanortu" id="pekerjaanortuburuh">Buruh</label>
-          <label for="pekerjaanortupensiunan"><input type="radio" name="pekerjaanortu" id="pekerjaanortupensiunan">Pensiunan</label>
-          <label for="pekerjaanortumeninggal"><input type="radio" name="pekerjaanortu" id="pekerjaanortumeninggal">Sudah Meninggal</label><br>
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+        </label><br><br>
+
+        <label for="pekerjaanortu">Pekerjaan* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : 
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortutidakbekerja" checked><label for="pekerjaanortutidakbekerja">Tidak Bekerja</label>&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortunelayan"><label for="pekerjaanortunelayan">Nelayan</label>&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortupetani"><label for="pekerjaanortupetani">Petani</label>&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortupeternak"><label for="pekerjaanortupeternak">Peternak</label>&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortupns"><label for="pekerjaanortupns">PNS/TNI/Polri</label><br><br>
+
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortukaryawan"><label for="pekerjaanortukaryawan">Karyawan Swasta</label>&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortupedagangkecil"><label for="pekerjaanortupedagangkecil">Pedagang Kecil</label>&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortupedagangbesar"><label for="pekerjaanortupedagangbesar">Pedagang Besar</label>&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortuwirausaha"><label for="pekerjaanortuwirausaha">Wirausaha/Wiraswasta</label><br><br>
+
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortuburuh"><label for="pekerjaanortuburuh">Buruh</label>
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortupensiunan"><label for="pekerjaanortupensiunan">Pensiunan</label>
+          <input type="radio" name="pekerjaanortu" id="pekerjaanortumeninggal"><label for="pekerjaanortumeninggal">Sudah Meninggal</label><br><br>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <label for="">Lainnya, Sebutkan<input type="text"></label>&emsp;
         </label><br>
-        <label for="">Jumlah Penghasilan Kotor &emsp;&emsp;&ensp; : Rp<input type="number">/Bulan</label><br>
-        <label for="">Nomer NPWP &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; : <input type="text"></label>
+        <label for="">Jumlah Penghasilan Kotor &emsp;&ensp;&ensp; : Rp<input type="number">/Bulan</label><br>
+        <label for="">Nomer NPWP &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp; : <input type="text"></label>
       </div>
     </main>
   </form>
